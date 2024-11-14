@@ -1,0 +1,9 @@
+EXEC = Project2
+HEADERS = term.h autocomplete.h SortingList.h
+OBJECTS = term.o autocomplete.o SortingList.o Project2.o
+$(EXEC): $(OBJECTS)
+	g++ %^ -o $@
+%.o %.cpp $(HEADERS)
+	g++ -c $< -o $@
+clean: 
+	rm -i *.o $(EXEC)
